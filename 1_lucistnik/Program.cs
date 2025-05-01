@@ -2,27 +2,25 @@
 
 class Program
 {
-    public static int ReturnTheIntiger (string numberOfAddedArrowsText)
+    public static int ReadIntegerFromConsole()
     {
-        int numerOfAddedArrows;
-        bool isAnumber = int.TryParse(numberOfAddedArrowsText, out numerOfAddedArrows);
+        int numberOfAddedArrows;
+        bool isANumber = int.TryParse(Console.ReadLine(), out numberOfAddedArrows);
 
-        while (isAnumber == false || numerOfAddedArrows <= 0)
+        while (isANumber == false || numberOfAddedArrows <= 0)
         {
             Console.WriteLine("Enter a whole number greater than 0.");
-            numberOfAddedArrowsText = Console.ReadLine();
-            isAnumber = int.TryParse(numberOfAddedArrowsText, out numerOfAddedArrows);
+            isANumber = int.TryParse(Console.ReadLine(), out numberOfAddedArrows);
         }
 
-        return numerOfAddedArrows;
+        return numberOfAddedArrows;
     }
     static void Main(string[] args)
     {
         Archer David = new Archer("David", 5);
         David.ShowInfo();
 
-        bool RepeatTheCycle = true;
-        while (RepeatTheCycle)
+        while (true)
         {
             Console.WriteLine("Choose your next step:");
             Console.WriteLine("[1] Fire a bow shot");
@@ -30,7 +28,6 @@ class Program
             Console.WriteLine("[3] Exit");
 
             string userChoice = Console.ReadLine();
-
 
             switch (userChoice)
             {
@@ -42,13 +39,12 @@ class Program
                     Console.WriteLine("How many arrows do you want to add?");
                     //string numberOfArrowsToAddText = Console.ReadLine();
                     //int numberOfArrowsToAdd = ReturnTheIntiger(Console.ReadLine());
-                    David.AddArrows(ReturnTheIntiger(Console.ReadLine()));
+                    David.AddArrows(ReadIntegerFromConsole());
                     break;
 
                 case "3":
                     Console.WriteLine("End of the program");
-                    RepeatTheCycle = false;
-                    break;
+                    return;
 
                 default:
                     Console.WriteLine("Press 1, 2, or 3 for the next step.");

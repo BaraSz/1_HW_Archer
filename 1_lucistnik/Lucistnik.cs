@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace _1_lucistnik
 {
     public class Archer
@@ -38,10 +33,11 @@ namespace _1_lucistnik
             }
             else if (number == 1 && NumberOfArrows > 1)
             {
-            Console.WriteLine($"+ {number} arrow, total: {NumberOfArrows} arrows");
+                Console.WriteLine($"+ {number} arrow, total: {NumberOfArrows} arrows");
             }
-            else {
-            Console.WriteLine($"+ {number} arrows, total: {NumberOfArrows} arrows");
+            else
+            {
+                Console.WriteLine($"+ {number} arrows, total: {NumberOfArrows} arrows");
             }
         }
 
@@ -49,6 +45,5 @@ namespace _1_lucistnik
         {
             Console.WriteLine($"Hi my name is {Name} and I have {NumberOfArrows} arrows");
         }
-
     }
 }
