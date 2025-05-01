@@ -4,14 +4,13 @@ class Program
 {
     public static int ReadIntegerFromConsole()
     {
-        int numberOfAddedArrows = 0;
-        bool isANumber = false;
+        int numberOfAddedArrows;
+        bool isANumber = int.TryParse(Console.ReadLine(), out numberOfAddedArrows);
 
         while (isANumber == false || numberOfAddedArrows <= 0)
         {
             Console.WriteLine("Enter a whole number greater than 0.");
-            string numberOfAddedArrowsText = Console.ReadLine();
-            isANumber = int.TryParse(numberOfAddedArrowsText, out numberOfAddedArrows);
+            isANumber = int.TryParse(Console.ReadLine(), out numberOfAddedArrows);
         }
 
         return numberOfAddedArrows;
